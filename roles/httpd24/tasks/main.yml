@@ -1,0 +1,12 @@
+---
+- name: install httpd24
+  yum:
+    name: httpd
+    state: present
+  become: yes
+- name: httpd24 service started
+  systemd:
+    name: httpd
+    state: started
+    enabled: yes
+  become: yes

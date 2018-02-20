@@ -1,0 +1,6 @@
+---
+- name: restart httpd24 service
+  systemd:
+    name: httpd
+    state: restarted
+  become: yes
