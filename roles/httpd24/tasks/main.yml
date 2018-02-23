@@ -4,6 +4,16 @@
     name: httpd
     state: present
   become: yes
+
+- name: update httpd configuration
+  template:
+    src: httpd.conf.j2
+    dest: /etc/httpd/conf/httpd.conf
+    owner: root
+    group: root
+    mode: "u=rw,g=r,o=r"
+    backup: yes
+
 - name: httpd24 service started
   systemd:
     name: httpd
