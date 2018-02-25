@@ -4,7 +4,7 @@ Include conf.modules.d/*.conf
 User apache
 Group apache
 ServerAdmin root@localhost
-ServerName: {{ httpd_servername }}:80
+ServerName {{ httpd_servername }}:80
 <Directory />
     AllowOverride none
     Require all denied
